@@ -10,5 +10,5 @@ RUN apt-get update \
 ADD config/ /etc/opendkim/
 
 ADD start.sh /
-RUN  chmod +x /start.sh
+RUN chmod +x /start.sh
 CMD ["/start.sh"]
