@@ -5,11 +5,9 @@ RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y opendkim rsyslog \
   && touch /var/log/mail.log \
   && chown syslog:syslog /var/log/mail.log \
-  && rm -rf /etc/opendkim/ \
-  && rm -rf /etc/dkimkeys
+  && rm -rf /etc/opendkim/
 
 ADD config/ /etc/opendkim/
-ADD dkimkeys/ /etc/dkimkeys/
 
 ADD start.sh /
 RUN  chmod +x /start.sh
